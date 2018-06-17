@@ -5,13 +5,28 @@ var mainList = {
 myBudget: budget,
 shop: nameOfShop,
 shopGoods: [],
-employers: 12,
+employers: {},
 isOpen: false
 };
 
-mainList.shopGoods[0] = prompt("Какой вид товара будем продавать?", "hods");
-mainList.shopGoods[1] = prompt("Какой вид товара будем продавать?", "sunglasses");
-mainList.shopGoods[2] = prompt("Какой вид товара будем продавать?", "sweets");
+
+// 1. let i;
+// for(i = 0; i < 5; i++) {**code**}
+// 2. let i = 5;
+// for(; i > 0; i--) {**code**}
+
+
+for(let i =0; i < 5; i++) {
+	let a = prompt("Какой тип товаров будем продавать?");
+	if((typeof(a)) === "string" && (typeof(a)) !== null && a != "" && a.length < 50) {
+		console.log('Ok');
+		mainList.shopGoods[i] = a;
+	} else {
+		alert("Неверный формат ввода");
+		i--;
+	}
+}
+
 document.write(mainList.myBudget / 30);
 
 
